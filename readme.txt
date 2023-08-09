@@ -5,8 +5,8 @@ Tags: WooCommerce customize, single product page, insert HTML in product page, s
 Requires PHP: 5.2.4
 Requires at least: 3.0.1
 Tested up to: 6.2.2
-WC tested up to: 7.7.0
-Stable tag: 2.4
+WC tested up to: 8.0.0
+Stable tag: 2.5
 
 Using this smart plugin, allows you to add text or HTML to WooCommerce Single product page, no need to edit the theme and WooCommerce plugin!
 
@@ -146,4 +146,7 @@ Tested upto wp version 5.9
 Tested up to wp version 6.0.1
 
  = 2.4 =
-Tested up to wp version 6.2.2
+Tested up to wp version 6.2.2.
+
+= 2.5 =
+Fixed WooCommerce Product Thumbnails Position Issue.

@@ -8,9 +8,9 @@ Description: By using this smart plugin, allows you to add text or HTML in woooc
 
 Author: Geek Code Lab
 
-Version: 2.4
+Version: 2.5
 
-WC tested up to: 7.7.0
+WC tested up to: 8.0.0
 
 Author URI: https://geekcodelab.com/
 
@@ -18,7 +18,7 @@ Author URI: https://geekcodelab.com/
 
 if( !defined( 'ABSPATH' ) ) exit;
 
-define( "WSPPC_BUILD", 2.4);
+define( "WSPPC_BUILD", 2.5);
 
 require_once( plugin_dir_path (__FILE__) .'functions.php' );
 
@@ -69,8 +69,8 @@ function wsppc_plugin_active_single_product_page_customizert(){
 	   die('Plugin NOT activated: ' . $error);
 	}
 
-	if (is_plugin_active( 'woo-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php' ) ) {		
-		deactivate_plugins('woo-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php');
+	if (is_plugin_active( 'woocommerce-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php' ) ) {		
+		deactivate_plugins('woocommerce-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php');
    	} 
 }
 /**Avtivation Hook End */
