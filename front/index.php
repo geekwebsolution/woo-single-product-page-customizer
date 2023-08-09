@@ -1,7 +1,5 @@
 <?php
 
-
-
 /** Front Side Global Content Print Strat */
  
 add_action( 'init', 'wsppc_global_content_print_function' );
@@ -28,7 +26,7 @@ function wsppc_global_content_print_function() {
 
 			}elseif($key == 'woocommerce_product_thumbnails'){
 
-				add_action( 'woocommerce_after_single_product_summary','wsppc_woocommerce_product_thumbnails',5);
+				add_action( 'woocommerce_product_thumbnails','wsppc_woocommerce_product_thumbnails',5);
 				
 			}else{
 
