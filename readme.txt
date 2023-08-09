@@ -111,41 +111,42 @@ After activating the plugin, go to <strong>Woocommerce > Woocommerce Single Prod
 = 1.2 =
  Fixed Issue.
  
- = 1.3 =
+= 1.3 =
  Fixed Issue.
  
-  = 1.4 =
+= 1.4 =
  Fixed Issue.
  
- = 1.5 =
+= 1.5 =
  Fixed Issue.
-  = 1.6 =
-  
+
+= 1.6 =  
  Fixed Issue.
-  = 1.7 =
+
+= 1.7 =
  Added setting menu link and support link.
  
- = 1.8 =
-Launched Paid Plugin.
+= 1.8 =
+ Launched Paid Plugin.
 
- = 1.9 =
-Update Paid Features.
+= 1.9 =
+ Update Paid Features.
 
- = 2.0 =
+= 2.0 =
 Added two positions.
 - WooCommerce after the product title
 - WooCommerce after the product price
 
- = 2.1 =
+= 2.1 =
 Fixed bug.
 
- = 2.2 =
+= 2.2 =
 Tested upto wp version 5.9
 
- = 2.3 =
+= 2.3 =
 Tested up to wp version 6.0.1
 
- = 2.4 =
+= 2.4 =
 Tested up to wp version 6.2.2.
 
 = 2.5 =
