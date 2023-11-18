@@ -1,24 +1,20 @@
 <?php
-
 /*
-
 Plugin Name: Woocommerce Single Product Page Customizer
 
 Description: By using this smart plugin, allows you to add text or HTML in wooocommerce Single product page , no need to edit theme and woocommerce plugin!
 
 Author: Geek Code Lab
 
-Version: 2.5
+Version: 2.6
 
-WC tested up to: 8.0.0
+WC tested up to: 8.3.0
 
 Author URI: https://geekcodelab.com/
-
 */
-
 if( !defined( 'ABSPATH' ) ) exit;
 
-define( "WSPPC_BUILD", 2.5);
+define( "WSPPC_BUILD", 2.6);
 
 require_once( plugin_dir_path (__FILE__) .'functions.php' );
 
@@ -204,18 +200,13 @@ function wsppc_removed_hook()
 }
 /** Admin Panel Remove Hook Form End */
 
-
-// $wsppc_hooks=wsppc_get_hook();
-// if(!empty($wsppc_hooks)){
-// 	foreach($wsppc_hooks as $key => $wsppc_hook)
-// 	{
-// 		add_action( $key, 'wsppc_single_product_page_hook');
-// 	}
-// }
-// function wsppc_single_product_page_hook($arg) {
-// 	$hook = current_filter();
-// 	$wsppc_hooks=wsppc_get_hook(); 
-// 	echo wsppc_output($wsppc_hooks[$hook]);
-	
-// }
+/**
+ * Added HPOS support for woocommerce
+ */
+add_action( 'before_woocommerce_init', 'wsppc_before_woocommerce_init' );
+function wsppc_before_woocommerce_init() {
+    if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+}
 ?>
