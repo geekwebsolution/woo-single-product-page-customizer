@@ -59,16 +59,34 @@ function wsppc_single_product_page_setting(){
 
 /**Avtivation Hook Start */
 register_activation_hook( __FILE__, 'wsppc_plugin_active_single_product_page_customizert' );
-function wsppc_plugin_active_single_product_page_customizert(){
-	$error='required <b>woocommerce</b> plugin.';
-	if ( !class_exists( 'WooCommerce' ) ) {
-	   die('Plugin NOT activated: ' . $error);
-	}
-
+function wsppc_plugin_active_single_product_page_customizert() {
 	if (is_plugin_active( 'woocommerce-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php' ) ) {		
 		deactivate_plugins('woocommerce-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php');
    	} 
 }
+/** Trigger an admin notice if WooCommerce is not installed.*/
+if ( ! function_exists( 'wsppc_install_woocommerce_admin_notice' ) ) {
+	function wsppc_install_woocommerce_admin_notice() { ?>
+		<div class="error">
+			<p>
+				<?php
+				// translators: %s is the plugin name.
+				echo esc_html( sprintf( __( '%s is enabled but not effective. It requires WooCommerce in order to work.' ), 'Woocommerce Single Product Page Customizer' ) );
+				?>
+			</p>
+		</div>
+		<?php
+	}
+}
+function wsppc_woocommerce_constructor() {
+    // Check WooCommerce installation
+	if ( ! function_exists( 'WC' ) ) {
+		add_action( 'admin_notices', 'wsppc_install_woocommerce_admin_notice' );
+		return;
+	}
+
+}
+add_action( 'plugins_loaded', 'wsppc_woocommerce_constructor' );
 /**Avtivation Hook End */
 require_once(plugin_dir_path( __FILE__ ) . 'front/index.php' );
 
