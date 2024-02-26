@@ -43,7 +43,7 @@ if (isset($_POST['update_option'])) {
 $wsppc_hooks = wsppc_get_hook();
 ?>
 <div class="wrap wsppc-main-box">
-	<h2>Woocommerce Single Product Page Customizer &raquo; <?php _e('Settings', 'Insert Script In Headers And Footers'); ?></h2>
+	<h2><?php echo esc_html__('Woocommerce Single Product Page Customizer','woocommerce-single-product-page-customizer'); ?> &raquo; <?php _e('Settings', 'woocommerce-single-product-page-customizer'); ?></h2>
 
 	<div class="wsppc-grid-container">
 		<div class="wsppc-grid-row">
@@ -65,8 +65,8 @@ $wsppc_hooks = wsppc_get_hook();
 								<li><span class="wsppc_hook_name"><?php echo str_replace("_", " ", $key); ?></span>
 									<span class="wsppc_hook_action">
 										<span class="wsppc_ajax_loader edit_ajax_loader"></span>
-										<a class="wsppc_edit_hook" data-hook='<?php echo $key; ?>' href="javascript:void(0)">Edit</a>
-										<a class="wsppc_remove_hook" data-hook='<?php echo $key; ?>' href="javascript:void(0)">Remove</a>
+										<a class="wsppc_edit_hook" data-hook='<?php echo $key; ?>' href="javascript:void(0)"><?php echo esc_html__('Edit','woocommerce-single-product-page-customizer'); ?></a>
+										<a class="wsppc_remove_hook" data-hook='<?php echo $key; ?>' href="javascript:void(0)"><?php echo esc_html__('Remove','woocommerce-single-product-page-customizer'); ?></a>
 									</span>
 									<div class="wsppchook_details" style="display:none">
 									</div>
@@ -74,51 +74,49 @@ $wsppc_hooks = wsppc_get_hook();
 						<?php }
 						} ?>
 					</ul>
-					<a class="wsppc_add_form_link" href="javascript:void(0);">Add New Position</a>
+					<a class="wsppc_add_form_link" href="javascript:void(0);"><?php echo esc_html__('Add New Position','woocommerce-single-product-page-customizer'); ?></a>
 					<span class="wsppc_ajax_loader"></span>
 					<div class="wsppc_add_hook_form"></div>
 				</div>
 			</div>
 			<div class="wsppc-grid-4">
 			<div class="wsppc_pro_details ">
-				<h2>Woocommerce Single Product Page Customizer Pro</h2>
+				<h2><?php echo esc_html__('Woocommerce Single Product Page Customizer Pro','woocommerce-single-product-page-customizer'); ?></h2>
 				<ul>
-					<li>Customize option in product edit page.
+					<li><?php echo esc_html__('Customize option in product edit page.','woocommerce-single-product-page-customizer'); ?>
 						<ul>
-							<li>Allows you to add text, HTML, Shortcode in each Single product.</li>
-							<li>You can add text, HTML, Shortcode in diffrent product with selected posstion.</li>	
+							<li><?php echo esc_html__('Allows you to add text, HTML, Shortcode in each Single product.','woocommerce-single-product-page-customizer'); ?></li>
+							<li><?php echo esc_html__('You can add text, HTML, Shortcode in diffrent product with selected posstion.','woocommerce-single-product-page-customizer'); ?></li>	
 						</ul>
 					</li>
-					<li>Customize option in category page.
+					<li><?php echo esc_html__('Customize option in category page.','woocommerce-single-product-page-customizer'); ?>
 						<ul>
-							<li>Instead of changing product content individually, customize it from specific category.</li>
-							<li>If we will add content in specific category then those contents showing in all products of this category.</li>
-							<li>You can add text, HTML, Shortcode in different product with selected position.</li>
+							<li><?php echo esc_html__('Instead of changing product content individually, customize it from specific category.','woocommerce-single-product-page-customizer'); ?></li>
+							<li><?php echo esc_html__('If we will add content in specific category then those contents showing in all products of this category.','woocommerce-single-product-page-customizer'); ?></li>
+							<li><?php echo esc_html__('You can add text, HTML, Shortcode in different product with selected position.','woocommerce-single-product-page-customizer'); ?></li>
 						</ul>
 					</li>
-					<li>Shortcode Supported.</li>
-					<li>HTML Supported.</li>
-					<li>Stick it on overall 20 positions on the page.</li>
-					<li>We provide a Guild Map of product single page positions.</li>
-					<li>Users can remove any content by selecting the options from the Remove Content tab.</li>
-					<li>Tab titles and content headings texts can be changed from Labels Settings tab.</li>
-					<li>Sale badge text and default option text can also change.</li>
-					<li>Option to change related products title, out of stock and backorder text.</li>
-					<li> Also you can change related product's display per page and columns.</li>
-					<li>Timely <a href="https://geekcodelab.com/contact/" target="_blank">support</a> 24/7.</li>
-					<li>Regular updates.</li>
-					<li>Well documented.</li>
+					<li><?php echo esc_html__('Shortcode Supported.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('HTML Supported.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Stick it on overall 20 positions on the page.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('We provide a Guild Map of product single page positions.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Users can remove any content by selecting the options from the Remove Content tab.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Tab titles and content headings texts can be changed from Labels Settings tab.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Sale badge text and default option text can also change.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Option to change related products title, out of stock and backorder text.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__("Also you can change related product's display per page and columns.",'woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Timely','woocommerce-single-product-page-customizer'); ?> <a href="https://geekcodelab.com/contact/" target="_blank">support</a> 24/7.</li>
+					<li><?php echo esc_html__('Regular updates.','woocommerce-single-product-page-customizer'); ?></li>
+					<li><?php echo esc_html__('Well documented.','woocommerce-single-product-page-customizer'); ?></li>
 				</ul>
-    			<a href="https://geekcodelab.com/wordpress-plugins/woocommerce-single-product-page-customizer-pro/" title="Upgrade to Premium" class="wsppc_premium_btn" target="_blank">Upgrade to Premium</a>
+    			<a href="https://geekcodelab.com/wordpress-plugins/woocommerce-single-product-page-customizer-pro/" title="Upgrade to Premium" class="wsppc_premium_btn" target="_blank"><?php echo esc_html__('Upgrade to Premium.','woocommerce-single-product-page-customizer'); ?></a>
 			</div>
 			</div>
 		</div>
 	</div>
 
-
-
 	<div class="single-page-position-box">
-		<h1 class="woocommerce-single-page-position-map">Woocommerce Single Product Page Position <span class="position-map-accordion">Guide Map</span></h1>
+		<h1 class="woocommerce-single-page-position-map"><?php echo esc_html__('Woocommerce Single Product Page Position','woocommerce-single-product-page-customizer'); ?> <span class="position-map-accordion"><?php echo esc_html__('Guide Map','woocommerce-single-product-page-customizer'); ?></span></h1>
 		<img class="woocommerce-single-page-position-map-image" style="display:none;" src="<?php echo plugins_url('../assets/image/wsppc-product-page-guide-map-new.jpg', __FILE__); ?>" alt="Woocommerce Single page position map Image">
 
 	</div>
@@ -147,7 +145,6 @@ $ajax_remove_nonce = wp_create_nonce("wsppc_ajax_remove_nonce");
 	jQuery('.wsppc_edit_hook').click(function() {
 		var main_li = jQuery(this).parent().parent();
 		var hook_name = jQuery(this).attr('data-hook');
-		// jQuery(this).prev().css("display","inline");
 		var $curr = jQuery(this);
 		$curr.prev().css("display", "inline");
 
@@ -359,10 +356,7 @@ $ajax_remove_nonce = wp_create_nonce("wsppc_ajax_remove_nonce");
 					main_li.remove();
 				}
 				$curr.prev().css("display", "none");
-
-				// jQuery(".wsppc_add_hook_form").html(response);				 
 			}
 		});
-
 	});
 </script>
