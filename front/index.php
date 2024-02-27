@@ -1,11 +1,7 @@
 <?php
-
 /** Front Side Global Content Print Strat */
- 
 add_action( 'init', 'wsppc_global_content_print_function' );
- 
 function wsppc_global_content_print_function() {
-
 	$wsppc_hooks	=	wsppc_get_hook();
 	if(!empty($wsppc_hooks)){
 		foreach($wsppc_hooks as $key => $wsppc_hook){
@@ -17,19 +13,15 @@ function wsppc_global_content_print_function() {
 				add_action( $key, 'wsppc_single_product_page_hook',4);
 
 			}elseif($key == 'woocommerce_after_product_title'){
-
 				add_action( 'woocommerce_single_product_summary','wsppc_woocommerce_after_product_title',5);
 
 			}elseif($key == 'woocommerce_after_product_price'){
-
 				add_action( 'woocommerce_single_product_summary' , 'wsppc_woocommerce_after_product_price' ,10);
 
 			}elseif($key == 'woocommerce_product_thumbnails'){
-
 				add_action( 'woocommerce_product_thumbnails','wsppc_woocommerce_product_thumbnails',5);
-				
-			}else{
 
+			}else{
 				add_action( $key, 'wsppc_single_product_page_hook',5);
 			}
 	
@@ -53,7 +45,6 @@ function wsppc_single_product_product_summary_hook($arg) {
 	echo "<div class='wsppc_div_block wsppc_product_summary_text'>";
 	echo wsppc_output($wsppc_hooks[$hook]);
 	echo "</div>";
-	
 }
 
 function wsppc_woocommerce_after_product_title(){
@@ -81,8 +72,6 @@ function wsppc_woocommerce_product_thumbnails($arg) {
 	echo "</div>";
 	
 }
-
-
 /** Front Side Global Content Print End */
 
 /** front side Css */

@@ -1,21 +1,16 @@
 <?php
 /*
 Plugin Name: Woocommerce Single Product Page Customizer
-
 Description: By using this smart plugin, allows you to add text or HTML in wooocommerce Single product page , no need to edit theme and woocommerce plugin!
-
 Author: Geek Code Lab
-
-Version: 2.6
-
-WC tested up to: 8.3.0
-
+Version: 2.7
+WC tested up to: 8.6.1
 Author URI: https://geekcodelab.com/
+Text Domain: woocommerce-single-product-page-customizer
 */
+
 if( !defined( 'ABSPATH' ) ) exit;
-
-define( "WSPPC_BUILD", 2.6);
-
+define( "WSPPC_BUILD", 2.7);
 require_once( plugin_dir_path (__FILE__) .'functions.php' );
 
 /** All Hook List Array */
@@ -49,9 +44,6 @@ function wsppc_admin_menu_single_product_page_customizer(){
 	add_submenu_page( 'woocommerce','Single Product Page Customizer', 'Single Product Page Customizer', 'manage_options', 'wsppc-woocommerce-single-product-page-customizer', 'wsppc_single_product_page_setting');
 }
 function wsppc_single_product_page_setting(){
-	if(!current_user_can('manage_options') ){
-		wp_die( __('You do not have sufficient permissions to access this page.') );
-	}
 	include( plugin_dir_path( __FILE__ ) . 'admin/options.php' );
 }
 /** Admin Menu End */
@@ -70,8 +62,7 @@ if ( ! function_exists( 'wsppc_install_woocommerce_admin_notice' ) ) {
 		<div class="error">
 			<p>
 				<?php
-				// translators: %s is the plugin name.
-				echo esc_html( sprintf( __( '%s is enabled but not effective. It requires WooCommerce in order to work.' ), 'Woocommerce Single Product Page Customizer' ) );
+				echo esc_html__( sprintf( '%s is enabled but not effective. It requires WooCommerce in order to work.', 'Woocommerce Single Product Page Customizer' ), 'woocommerce-single-product-page-customizer' );
 				?>
 			</p>
 		</div>
@@ -97,10 +88,10 @@ function wsppc_add_plugin_settings_link( $links ) {
 	$support_link = '<a href="https://geekcodelab.com/contact/"  target="_blank" >' . __( 'Support', 'woocommerce-single-product-page-customizer' ) . '</a>'; 
 	array_unshift( $links, $support_link );
 
-	$pro_link = '<a href="https://geekcodelab.com/wordpress-plugins/woocommerce-single-product-page-customizer-pro/"  target="_blank" style="color:#46b450;font-weight: 600;">' . __( 'Premium Upgrade' ) . '</a>'; 
+	$pro_link = '<a href="https://geekcodelab.com/wordpress-plugins/woocommerce-single-product-page-customizer-pro/"  target="_blank" style="color:#46b450;font-weight: 600;">' . __( 'Premium Upgrade', 'woocommerce-single-product-page-customizer' ) . '</a>'; 
 	array_unshift( $links, $pro_link );	
 
-	$settings_link = '<a href="'. admin_url() .'admin.php?page=wsppc-woocommerce-single-product-page-customizer">' . __( 'Settings', 'wsppc-woocommerce-single-product-page-customizer' ) . '</a>';
+	$settings_link = '<a href="'. admin_url() .'admin.php?page=wsppc-woocommerce-single-product-page-customizer">' . __( 'Settings', 'woocommerce-single-product-page-customizer' ) . '</a>';
 	array_unshift( $links, $settings_link );
 
 	return $links;
@@ -114,9 +105,6 @@ function wsppc_enqueue_styles_scripts()
     if( is_admin() ) {
         $css= plugins_url() . '/'.  basename(dirname(__FILE__)) . "/assets/css/style.css";               
         wp_enqueue_style( 'main-wsppc-woocommerce-single-page-css', $css, array(), WSPPC_BUILD );
-		$js= plugins_url() . '/'.  basename(dirname(__FILE__)) . "/assets/js/main.js";               
-        wp_enqueue_script( 'main-wsppc-woocommerce-single-page-js', $js, array(), WSPPC_BUILD );
-		wp_localize_script( 'rml-script', 'wsppc_ajax', array( 'ajax_url' => admin_url('admin-ajax.php')) );
     }
 }
 /** Admin Site Add Scriot End */
@@ -170,7 +158,7 @@ function wsppc_edit_form()
 									} 
 								?>
 							</select>
-							<p class="description">Refere bellow position map.</p>
+							<p class="description"><?php echo esc_html__('Refere bellow position map.','woocommerce-single-product-page-customizer'); ?></p>
 						</span>
 					</th>
 				<?php } else { ?>
@@ -181,13 +169,13 @@ function wsppc_edit_form()
 				<tr valign="top">				
 					<td>
 					<textarea name="content" id="content_<?php echo $hook;?>" rows="12" class="wsppc_content wp-editor"> <?php  echo wp_unslash($hook_value); ?></textarea>
-					<p class="description">This content will be show on single product page as per choosen position.</p>
+					<p class="description"><?php echo esc_html__('This content will be show on single product page as per choosen position.','woocommerce-single-product-page-customizer'); ?></p>
 					</td>				
 				</tr>
 			</tbody>
 			</table>
 			<input type="hidden" name="single_page_wpnonce" value="<?php echo $nonce= wp_create_nonce('wsppc_single_page_wpnonce'); ?>">
-			<input type="submit" class="button button-primary " name="update_option" value="Update">			
+			<input type="submit" class="button button-primary " name="update_option" value="Update">
 	</form>
 	<?php
 	die;
@@ -210,10 +198,10 @@ function wsppc_removed_hook()
 	{
 		$security=$_POST['security'];
 	}
-		 $wsppc_hook=wsppc_get_hook();
-		 unset($wsppc_hook[$hook]);
-		 update_option('wsppc_hook',$wsppc_hook);
-		 echo true;
+	$wsppc_hook=wsppc_get_hook();
+	unset($wsppc_hook[$hook]);
+	update_option('wsppc_hook',$wsppc_hook);
+	echo true;
 	die;
 }
 /** Admin Panel Remove Hook Form End */
