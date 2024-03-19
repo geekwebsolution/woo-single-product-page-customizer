@@ -3,10 +3,10 @@ Contributors: rajkakadiya, rvadhel
 Donate link: https://paypal.me/rvadhel
 Tags: WooCommerce customize, single product page, insert HTML in product page, single product page customize
 Requires PHP: 7.4
-Requires at least: 6.4
-Tested up to: 6.4.2
+Requires at least: 6.3
+Tested up to: 6.4.3
 WC tested up to: 8.6.1
-Stable tag: 2.7
+Stable tag: 2.8
 
 Using this smart plugin, allows you to add text or HTML to WooCommerce Single product page, no need to edit the theme and WooCommerce plugin!
 
@@ -19,24 +19,27 @@ Below are listed all positions of the Single product page where you can show you
 
 
 **List of Positions where you can add your text**
-1. WooCommerce before single product
-2. WooCommerce before single product summary
-3. WooCommerce single product summary
-4. WooCommerce before add to cart form
-5. WooCommerce before variations form
-6. WooCommerce before add to cart button
-7. WooCommerce before single variation
-8. WooCommerce single variation
-9. WooCommerce after single variation
-10. WooCommerce after add to cart button
-11. WooCommerce after variations form
-12. WooCommerce after add to cart form
-13. WooCommerce product meta start
-14. WooCommerce product meta end
-15. WooCommerce share
-16. WooCommerce product thumbnails
-17. WooCommerce after single product summary
-18. WooCommerce after single product
+1. woocommerce before single product
+2. woocommerce before single product summary
+3. woocommerce single product summary
+4. woocommerce after product title
+5. woocommerce after product price
+6. woocommerce before add to cart form
+7. woocommerce before variations form
+8. woocommerce before add to cart button
+9. woocommerce before single variation
+10. woocommerce single variation
+11. woocommerce after single variation
+12. woocommerce after add to cart button
+13. woocommerce after variations form
+14. woocommerce after add to cart form
+15. woocommerce product meta start
+16. woocommerce product meta end
+17. woocommerce share
+18. woocommerce product thumbnails
+19. woocommerce after single product summary
+20. woocommerce after single product
+21. woocommerce after product thumbnails
 
 
 
@@ -158,3 +161,7 @@ Tested up to 6.4 wordpress version.
 
 = 2.7 =
 Fixed bugs.
+
+= 2.8 =
+ Added new position
+   - Woocommerce after product thumbnails
