@@ -11,7 +11,7 @@ Requires Plugins: woocommerce
 */
 
 if( !defined( 'ABSPATH' ) ) exit;
-define( "WSPPC_BUILD", 2.8.1);
+define( "WSPPC_BUILD", "2.8.1");
 require_once( plugin_dir_path (__FILE__) .'functions.php' );
 
 /** All Hook List Array */
