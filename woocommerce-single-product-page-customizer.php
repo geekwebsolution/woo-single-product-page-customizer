@@ -3,14 +3,15 @@
 Plugin Name: Woocommerce Single Product Page Customizer
 Description: By using this smart plugin, allows you to add text or HTML in wooocommerce Single product page , no need to edit theme and woocommerce plugin!
 Author: Geek Code Lab
-Version: 2.8
-WC tested up to: 8.6.1
+Version: 2.8.1
+WC tested up to: 9.1.2
 Author URI: https://geekcodelab.com/
 Text Domain: woocommerce-single-product-page-customizer
+Requires Plugins: woocommerce
 */
 
 if( !defined( 'ABSPATH' ) ) exit;
-define( "WSPPC_BUILD", 2.8);
+define( "WSPPC_BUILD", 2.8.1);
 require_once( plugin_dir_path (__FILE__) .'functions.php' );
 
 /** All Hook List Array */
@@ -57,28 +58,7 @@ function wsppc_plugin_active_single_product_page_customizert() {
 		deactivate_plugins('woo-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php');
    	} 
 }
-/** Trigger an admin notice if WooCommerce is not installed.*/
-if ( ! function_exists( 'wsppc_install_woocommerce_admin_notice' ) ) {
-	function wsppc_install_woocommerce_admin_notice() { ?>
-		<div class="error">
-			<p>
-				<?php
-				echo esc_html__( sprintf( '%s is enabled but not effective. It requires WooCommerce in order to work.', 'Woocommerce Single Product Page Customizer' ), 'woocommerce-single-product-page-customizer' );
-				?>
-			</p>
-		</div>
-		<?php
-	}
-}
-function wsppc_woocommerce_constructor() {
-    // Check WooCommerce installation
-	if ( ! function_exists( 'WC' ) ) {
-		add_action( 'admin_notices', 'wsppc_install_woocommerce_admin_notice' );
-		return;
-	}
 
-}
-add_action( 'plugins_loaded', 'wsppc_woocommerce_constructor' );
 /**Avtivation Hook End */
 require_once(plugin_dir_path( __FILE__ ) . 'front/index.php' );
 

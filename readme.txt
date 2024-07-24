@@ -5,8 +5,9 @@ Tags: WooCommerce customize, single product page, insert HTML in product page, s
 Requires PHP: 7.4
 Requires at least: 6.3
 Tested up to: 6.4.3
-WC tested up to: 8.6.1
-Stable tag: 2.8
+WC tested up to: 9.1.2
+Stable tag: 2.8.1
+Requires Plugins: woocommerce
 
 Using this smart plugin, allows you to add text or HTML to WooCommerce Single product page, no need to edit the theme and WooCommerce plugin!
 
@@ -105,63 +106,66 @@ After activating the plugin, go to <strong>Woocommerce > Woocommerce Single Prod
 
 
 == Changelog ==
-= 1.0 =
- Initial release
- 
-= 1.1 =
- Update textarea to visual Editor where you can add HTML.
+= 2.8.1 =
+ Fixed shortcode with html elements
 
-= 1.2 =
- Fixed Issue.
- 
-= 1.3 =
- Fixed Issue.
- 
-= 1.4 =
- Fixed Issue.
- 
-= 1.5 =
- Fixed Issue.
+= 2.8 =
+ Added new position
+   - Woocommerce after product thumbnails
 
-= 1.6 =  
- Fixed Issue.
+= 2.7 =
+Fixed bugs.
 
-= 1.7 =
- Added setting menu link and support link.
- 
-= 1.8 =
- Launched Paid Plugin.
+= 2.6 =
+Added woocommerce HPOS support.
+Tested up to 6.4 wordpress version.
 
-= 1.9 =
- Update Paid Features.
+= 2.5 =
+Fixed WooCommerce Product Thumbnails Position Issue.
+
+= 2.4 =
+Tested up to wp version 6.2.2.
+
+= 2.3 =
+Tested up to wp version 6.0.1
+
+= 2.2 =
+Tested upto wp version 5.9
+
+= 2.1 =
+Fixed bug.
 
 = 2.0 =
 Added two positions.
 - WooCommerce after the product title
 - WooCommerce after the product price
 
-= 2.1 =
-Fixed bug.
+= 1.9 =
+ Update Paid Features.
 
-= 2.2 =
-Tested upto wp version 5.9
+= 1.8 =
+ Launched Paid Plugin.
 
-= 2.3 =
-Tested up to wp version 6.0.1
+= 1.7 =
+ Added setting menu link and support link.
 
-= 2.4 =
-Tested up to wp version 6.2.2.
+= 1.6 =  
+ Fixed Issue.
 
-= 2.5 =
-Fixed WooCommerce Product Thumbnails Position Issue.
+= 1.5 =
+ Fixed Issue.
 
-= 2.6 =
-Added woocommerce HPOS support.
-Tested up to 6.4 wordpress version.
+= 1.4 =
+ Fixed Issue.
+ 
+= 1.3 =
+ Fixed Issue.
 
-= 2.7 =
-Fixed bugs.
+= 1.2 =
+ Fixed Issue.
 
-= 2.8 =
- Added new position
-   - Woocommerce after product thumbnails
+= 1.1 =
+ Update textarea to visual Editor where you can add HTML.
+
+= 1.0 =
+ Initial release

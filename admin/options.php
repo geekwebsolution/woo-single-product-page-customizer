@@ -167,7 +167,6 @@ $ajax_remove_nonce = wp_create_nonce("wsppc_ajax_remove_nonce");
 				wp.editor.initialize("content_" + hook_name, {
 					mediaButtons: true,
 					tinymce: {
-
 						theme: 'modern',
 						skin: 'lightgray',
 						language: 'en',
@@ -229,8 +228,8 @@ $ajax_remove_nonce = wp_create_nonce("wsppc_ajax_remove_nonce");
 						toolbar4: '',
 						body_class: 'id post-type-post-status-publish post-format-standard',
 						wpeditimage_disable_captions: false,
-						wpeditimage_html5_captions: true
-
+						wpeditimage_html5_captions: true,
+						forced_root_block: ''
 					},
 					quicktags: true
 				});
@@ -320,8 +319,8 @@ $ajax_remove_nonce = wp_create_nonce("wsppc_ajax_remove_nonce");
 						toolbar4: '',
 						body_class: 'id post-type-post-status-publish post-format-standard',
 						wpeditimage_disable_captions: false,
-						wpeditimage_html5_captions: true
-
+						wpeditimage_html5_captions: true,
+						forced_root_block: ''
 					},
 					quicktags: true
 				});
