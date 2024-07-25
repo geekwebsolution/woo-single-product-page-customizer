@@ -27,7 +27,7 @@ function wsppc_get_hook_value($hook)
 	return $all_hook[$hook];
 }
 
-function wsppc_output($meta){
+function wsppc_output($meta, $encode = false){
 	
 	if ( empty( $meta ) ) {
 		return;
@@ -36,7 +36,13 @@ function wsppc_output($meta){
 		return;
 	}
 
-	// Output
-	return do_shortcode(html_entity_decode(wp_unslash( $meta )));
+	$data = html_entity_decode(wp_unslash( $meta ));
+	$content = apply_filters( 'the_content', $data );
+
+	if($encode) {
+		return htmlspecialchars($content);
+	}
+	
+	return $content;
 }
 ?>

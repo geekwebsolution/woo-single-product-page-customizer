@@ -84,11 +84,43 @@ function wsppc_woocommerce_product_thumbnails($arg) {
 function wsppc_woocommerce_after_product_thumbnails() {
 	$wsppc_hooks=wsppc_get_hook(); 
 	if(isset($wsppc_hooks['woocommerce_after_product_thumbnails']) && !empty($wsppc_hooks['woocommerce_after_product_thumbnails'])) {
-		echo '<div class="woocommerce-after-product-thumbnails-script"><script type="text/javascript">';
-        echo 'window.addEventListener("load",function(){if(document.querySelectorAll(".woocommerce-product-gallery").length>0&&document.querySelectorAll(".woocommerce-product-gallery").length>0){var e=document.querySelector(".woocommerce-product-gallery"),r=document.createElement("div");r.className="woocommerce_after_product_thumbnails",r.innerHTML=';
-        echo "'".wsppc_output($wsppc_hooks['woocommerce_after_product_thumbnails'])."'";
-        echo ',e.appendChild(r)}});';
-        echo '</script></div>';
+		$content = str_replace("\n", '&lt;br&gt;', wsppc_output($wsppc_hooks['woocommerce_after_product_thumbnails'],true));
+		?>
+		<div class="woocommerce-after-product-thumbnails-script">
+			<script type="text/javascript">
+            function wsppc_htmlspecialcharsDecode(t) {
+                var e = {
+                    "&amp;": "&",
+                    "&lt;": "<",
+                    "&gt;": ">",
+                    "&quot;": '"',
+                    "&#039;": "'"
+                };
+                t = t.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function(t) {
+                    return e[t];
+                });
+                t = t.replace(/<br>/g, '\n');
+                return t;
+            }
+            </script>
+            <?php
+                echo sprintf( '<script type="text/javascript">window.addEventListener("load", function() {
+                    var e = document.querySelector(".woocommerce-product-gallery");
+                    if (e) {
+                        var r = e.querySelector(".woocommerce_after_product_thumbnails");
+                        if (r) {
+                            r.innerHTML = wsppc_htmlspecialcharsDecode("%1$s"); // Replace %1$s with actual content
+                        } else {
+                            var o = document.createElement("div");
+                            o.className = "woocommerce_after_product_thumbnails";
+                            o.innerHTML = wsppc_htmlspecialcharsDecode("%2$s"); // Replace %2$s with actual content
+                            e.appendChild(o);
+                        }
+                    }
+                });</script>', $content, $content );
+            ?>
+        </div>
+		<?php
 	}
 }
 /** Front Side Global Content Print End */
