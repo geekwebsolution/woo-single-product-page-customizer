@@ -127,6 +127,10 @@ $ajax_edit_nonce = wp_create_nonce("wsppc_ajax_edit_nonce");
 $ajax_remove_nonce = wp_create_nonce("wsppc_ajax_remove_nonce");
 ?>
 <script>
+	jQuery('.wsppc-success-msg .notice-dismiss').click(function() {
+		jQuery(this).parents('.wsppc-success-msg').fadeOut();
+	});
+	
 	if (jQuery('.wsppc_tab').children().length == 0) {
 		jQuery(".wsppc_tab").addClass("empty");
 	}
