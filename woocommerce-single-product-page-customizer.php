@@ -3,7 +3,7 @@
 Plugin Name: Woocommerce Single Product Page Customizer
 Description: By using this smart plugin, allows you to add text or HTML in wooocommerce Single product page , no need to edit theme and woocommerce plugin!
 Author: Geek Code Lab
-Version: 2.8.2
+Version: 2.9.0
 WC tested up to: 9.1.2
 Author URI: https://geekcodelab.com/
 Text Domain: woocommerce-single-product-page-customizer
@@ -11,8 +11,13 @@ Requires Plugins: woocommerce
 */
 
 if( !defined( 'ABSPATH' ) ) exit;
-define( "WSPPC_BUILD", "2.8.2");
+define( "WSPPC_BUILD", "2.9.0");
+
+define('WSPPC_PATH', plugin_dir_path(__FILE__));
+if (!defined("WSPPC_PLUGIN_DIR")) define("WSPPC_PLUGIN_DIR", plugin_basename(__DIR__));
+if (!defined("WSPPC_PLUGIN_BASENAME")) define("WSPPC_PLUGIN_BASENAME", plugin_basename(__FILE__));
 require_once( plugin_dir_path (__FILE__) .'functions.php' );
+require(WSPPC_PATH . 'updater/updater.php');
 
 /** All Hook List Array */
 $hook_list=array(
@@ -54,10 +59,13 @@ function wsppc_single_product_page_setting(){
 /**Avtivation Hook Start */
 register_activation_hook( __FILE__, 'wsppc_plugin_active_single_product_page_customizert' );
 function wsppc_plugin_active_single_product_page_customizert() {
+	wsppc_updater_activate();
 	if (is_plugin_active( 'woo-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php' ) ) {
 		deactivate_plugins('woo-single-product-page-customizer-pro/woocommerce-single-product-page-customizer-pro.php');
    	} 
 }
+
+add_action('upgrader_process_complete', 'wsppc_updater_activate'); // remove  transient  on plugin  update
 
 /**Avtivation Hook End */
 require_once(plugin_dir_path( __FILE__ ) . 'front/index.php' );

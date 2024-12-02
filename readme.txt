@@ -6,7 +6,7 @@ Requires PHP: 7.4
 Requires at least: 6.3
 Tested up to: 6.4.3
 WC tested up to: 9.1.2
-Stable tag: 2.8.2
+Stable tag: 2.9.0
 Requires Plugins: woocommerce
 
 Using this smart plugin, allows you to add text or HTML to WooCommerce Single product page, no need to edit the theme and WooCommerce plugin!
@@ -106,6 +106,11 @@ After activating the plugin, go to <strong>Woocommerce > Woocommerce Single Prod
 
 
 == Changelog ==
+
+= 2.9.0 =
+ Fix Bug
+ Added auto updated function
+
 = 2.8.2 =
  Added support for gutenberg block inside position
 
